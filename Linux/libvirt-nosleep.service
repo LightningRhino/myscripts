@@ -1,0 +1,8 @@
+# copy to /etc/systemd/system/libvirt-nosleep.service
+
+[Unit]
+Description=Preventing sleep while a libvirt domain is running
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/systemd-inhibit --what=sleep --why="Libvirt domain is running" --who=%U --mode=block sleep infinity
