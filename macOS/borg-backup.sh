@@ -6,7 +6,7 @@ set +x
 export BORG_REPO='/Users/Olleg/.borg'
 
 # See the section "Passphrase notes" for more infos.
-export BORG_PASSPHRASE='secret'
+export BORG_PASSPHRASE='Paed9Ycc'
 
 # some helpers and error handling:
 info() { printf "\n%s %s\n\n" "$( date )" "$*" >&2; }
@@ -17,7 +17,7 @@ info "Starte Backup"
 # Backup the most important directories into an archive named after
 # the machine this script is currently running on:
 
-/opt/homebrew/bin/borg create -s --list --filter AME -C lz4 -e '*/.DS_Store' ::$(hostname -s)-$(date +%Y-%m-%d,%H:%M) /Users/Olleg/Documents
+/opt/homebrew/bin/borg create -s --list --filter AME -C lz4 --exclude-from /Users/Olleg/.scripts/bexclude.txt ::$(hostname -s)-$(date +%Y-%m-%d,%H:%M) /Users/Olleg/Documents /Users/Olleg/Wallpaper
 
 backup_exit=$?
 
