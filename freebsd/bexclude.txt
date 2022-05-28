@@ -1,0 +1,4 @@
+/boot/kernel
+/home/olleg/.cache
+/zroot/vm/win11/disk0.img
+/zroot/vm/.iso
