@@ -1,9 +1,9 @@
 #!/bin/sh
 
 # Eintrag in /etc/fstab:
-# //192.168.178.201/backup/borg /mnt/borg cifs defaults,noauto,credentials=/home/olleg/.smbcredentials    0 0
+# //192.168.178.201/backup/borg/arch /mnt/borg cifs defaults,noauto,credentials=/home/olleg/.smbcredentials    0 0
 # oder
-# 192.168.178.201:/volume1/backup/borg /mnt/borg2nas nfs defaults,noauto 0 0
+# 192.168.178.201:/volume1/backup/borg/arch /mnt/borg2nas nfs defaults,noauto 0 0
 
 set -x
 mount /mnt/borg2nas
